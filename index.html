@@ -564,6 +564,466 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
   .skills-layout { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; padding: 1.5rem; }
 }
+
+/* ── POLISHED PORTFOLIO THEME ── */
+:root {
+  --white: #f8f6ef;
+  --off: #efede4;
+  --off2: #e6e2d7;
+  --ink: #101414;
+  --ink2: #242a29;
+  --muted: #69716d;
+  --rule: #d9d5c9;
+  --accent: #d36b3d;
+  --blue: #1f6f78;
+  --blue-light: #dcebe9;
+  --tag-bg: #e8e3d8;
+  --tag-color: #45504d;
+  --panel: #fbfaf5;
+  --panel-strong: #f3f0e7;
+  --shadow: 0 22px 70px rgba(18, 24, 22, 0.1);
+}
+
+html { background: #151918; }
+
+body {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(211, 107, 61, 0.15), transparent 28rem),
+    radial-gradient(circle at 82% 4%, rgba(31, 111, 120, 0.16), transparent 30rem),
+    linear-gradient(180deg, #f2efe5 0%, #f8f6ef 44%, #efede4 100%);
+  color: var(--ink2);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(16, 20, 20, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 20, 20, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+}
+
+nav {
+  height: 68px;
+  background: rgba(18, 23, 22, 0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 36px rgba(10, 12, 12, 0.18);
+}
+
+.nav-name {
+  color: #fffaf0;
+  font-size: 1.1rem;
+}
+
+.nav-links a { color: rgba(255, 250, 240, 0.6); }
+.nav-links a:hover { color: #fffaf0; }
+
+.nav-cta,
+.btn-primary {
+  background: var(--accent);
+  color: #1b120d;
+  border: 1px solid rgba(87, 35, 11, 0.15);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(211, 107, 61, 0.25);
+}
+
+.nav-cta:hover,
+.btn-primary:hover {
+  background: #ea8050;
+  color: #160e09;
+}
+
+.container {
+  max-width: 1160px;
+  position: relative;
+}
+
+section { padding: 6.5rem 0; }
+.divider { display: none; }
+
+#hero {
+  min-height: calc(100vh - 68px);
+  padding: 7.5rem 0 5.5rem;
+  background: transparent;
+  border-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 5rem;
+  align-items: center;
+}
+
+.hero-label {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.hero-label::before { background: var(--blue); }
+
+h1 {
+  max-width: 760px;
+  color: #111513;
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  letter-spacing: 0;
+}
+
+h1 em {
+  color: var(--accent);
+  text-shadow: 0 12px 34px rgba(211, 107, 61, 0.16);
+}
+
+.hero-sub {
+  max-width: 620px;
+  color: #58615d;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.btn-row { gap: 0.85rem; }
+
+.btn-primary,
+.btn-outline {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  font-size: 0.78rem;
+}
+
+.btn-outline {
+  background: rgba(255, 252, 245, 0.72);
+  color: var(--ink);
+  border: 1px solid rgba(16, 20, 20, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+}
+
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(255, 252, 245, 0.95);
+}
+
+.hero-card,
+.focus-card,
+.skill-block,
+.rec-stat {
+  background: rgba(251, 250, 245, 0.84);
+  border: 1px solid rgba(16, 20, 20, 0.1);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  border-radius: 8px;
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  margin: -1.6rem -1.6rem 1.2rem;
+  background: linear-gradient(90deg, var(--accent), var(--blue));
+}
+
+.hero-card-row { border-bottom-color: rgba(16,20,20,0.09); }
+.card-label { color: #70776f; }
+.card-value { color: #111513; }
+
+#focus,
+#recognition {
+  background: rgba(239, 237, 228, 0.72) !important;
+  border-color: rgba(16, 20, 20, 0.09) !important;
+}
+
+.focus-grid {
+  gap: 1rem;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.focus-card {
+  border-right: 1px solid rgba(16, 20, 20, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.focus-card:hover {
+  background: #fffaf1;
+  transform: translateY(-3px);
+  box-shadow: 0 28px 80px rgba(18, 24, 22, 0.14);
+}
+
+.focus-icon {
+  background: #171d1b;
+  border-color: #171d1b;
+  color: #fff7e8;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.focus-title,
+h2.sec-title,
+.exp-org,
+.skill-block-title,
+.ctf-name-cell,
+.about-val {
+  color: #121615;
+}
+
+.focus-desc,
+.exp-body,
+.about-text,
+.sec-lead {
+  color: #5f6864;
+}
+
+.sec-eyebrow {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+h2.sec-title {
+  font-size: clamp(2.15rem, 4vw, 3.35rem);
+  letter-spacing: 0;
+}
+
+.tag {
+  background: rgba(232, 227, 216, 0.9);
+  border-color: rgba(16, 20, 20, 0.09);
+  color: #48524f;
+  border-radius: 999px;
+}
+
+.tag.blue {
+  background: rgba(31, 111, 120, 0.12);
+  color: #145d65;
+  border-color: rgba(31, 111, 120, 0.18);
+}
+
+.exp-layout {
+  grid-template-columns: 310px 1fr;
+  gap: 4.5rem;
+}
+
+.exp-item {
+  background: rgba(251, 250, 245, 0.62);
+  border: 1px solid rgba(16,20,20,0.09);
+  border-radius: 8px;
+  padding: 1.45rem;
+  margin-bottom: 1rem;
+}
+
+.exp-item:first-child { padding-top: 1.45rem; }
+.exp-item:last-child { border-bottom: 1px solid rgba(16,20,20,0.09); }
+.exp-date,
+.skill-level,
+.ctf-pts-cell { color: #70776f; }
+.exp-body li::before { content: "> "; color: var(--accent); }
+
+.rec-grid {
+  gap: 1rem;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.rec-stat {
+  border-radius: 8px;
+  padding: 1.35rem;
+}
+
+.rec-num {
+  color: var(--blue);
+  font-size: 2.45rem;
+}
+
+.ctf-table {
+  background: rgba(251, 250, 245, 0.72);
+  border: 1px solid rgba(16,20,20,0.09);
+  border-radius: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.ctf-table th,
+.ctf-table td {
+  padding-left: 1rem;
+  border-bottom-color: rgba(16,20,20,0.08);
+}
+
+.ctf-table tbody tr:hover { background: rgba(31, 111, 120, 0.055); }
+.place-gold { background: #fff0cf; color: #80540f; border-color: #e5bf69; }
+.place-top { background: #e4ebe8; color: #28413f; border-color: #c4d4cf; }
+.ctf-rating-cell { color: var(--blue); }
+
+.skills-layout { gap: 1rem; }
+
+.skill-block {
+  border-radius: 8px;
+  padding: 1.4rem;
+}
+
+.skill-dot { background: var(--accent); }
+
+.skill-item {
+  min-height: 32px;
+  border-bottom: 1px solid rgba(16,20,20,0.055);
+}
+
+.skill-item:last-child { border-bottom: 0; }
+
+.about-strip {
+  background: rgba(251, 250, 245, 0.54);
+  border: 1px solid rgba(16,20,20,0.08);
+  border-radius: 8px;
+  padding: 2.2rem;
+  box-shadow: var(--shadow);
+}
+
+.about-row { border-bottom-color: rgba(16,20,20,0.08); }
+.about-text a,
+.about-val a { color: var(--blue); }
+
+#contact {
+  background:
+    linear-gradient(135deg, rgba(211, 107, 61, 0.13), transparent 34rem),
+    linear-gradient(180deg, #151918 0%, #0f1312 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+#contact .sec-eyebrow { color: rgba(234, 128, 80, 0.9); }
+#contact .sec-lead { color: rgba(255,255,255,0.62); }
+
+.contact-link {
+  color: rgba(255,255,255,0.72);
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.contact-link:first-child { border-top-color: rgba(255,255,255,0.1); }
+.contact-link-label { color: rgba(234, 128, 80, 0.62); }
+
+.avail-badge {
+  color: rgba(255,255,255,0.72);
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.045);
+  border-radius: 999px;
+}
+
+footer { background: #0f1312; }
+
+@media (max-width: 900px) {
+  nav {
+    height: 62px;
+    padding: 0 1rem;
+  }
+
+  .nav-cta { padding: 7px 12px; }
+  .container { padding: 0 1.1rem; }
+  section { padding: 4.25rem 0; }
+  #hero {
+    min-height: auto;
+    padding: 5rem 0 4rem;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .hero-inner > *,
+  #hero,
+  .hero-sub {
+    max-width: 100%;
+    min-width: 0;
+  }
+  #hero .hero-sub,
+  #hero .btn-row,
+  #hero .hero-card {
+    width: calc(100% - 1.1rem);
+  }
+  h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
+  .hero-sub { font-size: 1rem; }
+  .hero-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+  .focus-card { border-right: 1px solid rgba(16,20,20,0.1); }
+  .rec-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .ctf-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .about-strip { padding: 1.35rem; }
+  .about-row {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .contact-link {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    gap: 0.75rem;
+    justify-content: space-between;
+  }
+  .nav-links { display: none; }
+  .nav-name { font-size: 1rem; }
+  .nav-cta {
+    display: none;
+  }
+  .hero-label {
+    flex-wrap: wrap;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    gap: 8px;
+  }
+  .hero-label::before { width: 18px; }
+  h1 {
+    font-size: clamp(2.45rem, 11.3vw, 3.25rem);
+    line-height: 1.05;
+  }
+  .hero-card-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .card-value {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+  .btn-row { display: grid; }
+  .btn-primary,
+  .btn-outline { width: 100%; }
+  .rec-grid { grid-template-columns: 1fr; }
+  .about-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .about-val { text-align: left; }
+}
 </style>
 </head>
 <body>
@@ -587,7 +1047,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
   <div class="hero-inner">
     <div>
       <p class="hero-label">Security Researcher · Coimbatore, India</p>
-      <h1>Application &amp; Cloud<br><em>Security Researcher</em></h1>
+      <h1>Application &amp; Cloud<br><em>Security<br>Researcher</em></h1>
       <p class="hero-sub">
         I focus on <strong>application security</strong>, <strong>cloud security</strong>, and
         <strong>AI/LLM security research</strong> — finding real vulnerabilities, building
@@ -595,8 +1055,8 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
       </p>
       <div class="btn-row">
         <a class="btn-primary" href="#focus">View focus areas</a>
-        <a class="btn-outline" href="https://github.com/gauthamram57" target="_blank">GitHub ↗</a>
-        <a class="btn-outline" href="https://www.linkedin.com/in/gauthamram57/" target="_blank">LinkedIn ↗</a>
+        <a class="btn-outline" href="https://github.com/gauthamram57" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/gauthamram57/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-card">
@@ -642,7 +1102,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
   <div class="focus-grid reveal">
     <div class="focus-card">
       <div class="focus-num">01</div>
-      <div class="focus-icon">🔐</div>
+      <div class="focus-icon">AS</div>
       <div class="focus-title">Application Security</div>
       <p class="focus-desc">Web application penetration testing, API security research, and vulnerability discovery across modern tech stacks. Active bug bounty hunter on Intigriti — focused on IDOR, broken access control, and business logic flaws.</p>
       <div class="focus-tags">
@@ -654,7 +1114,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
     </div>
     <div class="focus-card">
       <div class="focus-num">02</div>
-      <div class="focus-icon">☁️</div>
+      <div class="focus-icon">CS</div>
       <div class="focus-title">Cloud Security</div>
       <p class="focus-desc">Cloud infrastructure security with focus on misconfiguration discovery, IAM privilege escalation, and cloud-native attack paths. Researching AWS and GCP security posture and exposure across multi-tenant environments.</p>
       <div class="focus-tags">
@@ -666,7 +1126,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
     </div>
     <div class="focus-card">
       <div class="focus-num">03</div>
-      <div class="focus-icon">🤖</div>
+      <div class="focus-icon">AI</div>
       <div class="focus-title">AI / LLM Security</div>
       <p class="focus-desc">Researching security of large language model deployments — prompt injection, jailbreaking, indirect injection via RAG pipelines, and model supply chain threats. Exploring red-teaming methodologies for AI-powered applications.</p>
       <div class="focus-tags">
@@ -751,7 +1211,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
       <p class="sec-eyebrow">Track record</p>
       <h2 class="sec-title">CTF Competitions</h2>
     </div>
-    <a class="btn-outline" href="https://ctftime.org/team/375677" target="_blank" style="font-size:0.75rem;">Full record ↗</a>
+    <a class="btn-outline" href="https://ctftime.org/team/375677" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;">Full record ↗</a>
   </div>
   <div class="rec-grid" style="margin-bottom:2.5rem;">
     <div class="rec-stat">
@@ -905,7 +1365,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
       <p class="sec-eyebrow">Background</p>
       <h2 class="sec-title" style="margin-bottom:1.2rem;">About me</h2>
       <div class="about-text">
-        <p>I'm Gautham Ram, a security researcher and CTF competitor based in <strong>Coimbatore, Tamil Nadu</strong>. I'm part of <a href="https://ctftime.org/team/375677" target="_blank">Team Hunter</a> at Amrita Vishwa Vidyapeetham — a competitive security team ranked <strong>#76 globally</strong> in 2026.</p>
+        <p>I'm Gautham Ram, a security researcher and CTF competitor based in <strong>Coimbatore, Tamil Nadu</strong>. I'm part of <a href="https://ctftime.org/team/375677" target="_blank" rel="noopener noreferrer">Team Hunter</a> at Amrita Vishwa Vidyapeetham — a competitive security team ranked <strong>#76 globally</strong> in 2026.</p>
         <p>My primary focus is on real-world vulnerability research — I actively hunt on <strong>Intigriti</strong> across web application and cloud-hosted programs, with a methodical approach to recon, API mapping, and access control testing.</p>
         <p>I'm increasingly interested in the intersection of <strong>AI systems and security</strong> — specifically how LLM-powered applications introduce new attack surfaces around prompt injection, retrieval-augmented generation, and model supply chains.</p>
       </div>
@@ -922,11 +1382,11 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
         </div>
         <div class="about-row">
           <span class="about-key">CTF handle</span>
-          <span class="about-val"><a href="https://ctftime.org/user/248129" target="_blank">GT57 on CTFtime ↗</a></span>
+          <span class="about-val"><a href="https://ctftime.org/user/248129" target="_blank" rel="noopener noreferrer">GT57 on CTFtime ↗</a></span>
         </div>
         <div class="about-row">
           <span class="about-key">Team</span>
-          <span class="about-val"><a href="https://ctftime.org/team/375677" target="_blank">Team Hunter ↗</a></span>
+          <span class="about-val"><a href="https://ctftime.org/team/375677" target="_blank" rel="noopener noreferrer">Team Hunter ↗</a></span>
         </div>
         <div class="about-row">
           <span class="about-key">Bug bounty</span>
@@ -934,11 +1394,11 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
         </div>
         <div class="about-row">
           <span class="about-key">GitHub</span>
-          <span class="about-val"><a href="https://github.com/gauthamram57" target="_blank">gauthamram57 ↗</a></span>
+          <span class="about-val"><a href="https://github.com/gauthamram57" target="_blank" rel="noopener noreferrer">gauthamram57 ↗</a></span>
         </div>
         <div class="about-row">
           <span class="about-key">LinkedIn</span>
-          <span class="about-val"><a href="https://www.linkedin.com/in/gauthamram57/" target="_blank">gauthamram57 ↗</a></span>
+          <span class="about-val"><a href="https://www.linkedin.com/in/gauthamram57/" target="_blank" rel="noopener noreferrer">gauthamram57 ↗</a></span>
         </div>
       </div>
     </div>
@@ -957,22 +1417,22 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
       <p class="sec-lead" style="margin-top:0.5rem;margin-bottom:1.5rem;">Open to collaboration on security research, CTF teams, bug bounty partnerships, and AI security projects.</p>
       <div class="avail-badge"><span class="avail-dot"></span>Available for opportunities</div>
       <div class="contact-links">
-        <a class="contact-link" href="https://www.linkedin.com/in/gauthamram57/" target="_blank">
+        <a class="contact-link" href="https://www.linkedin.com/in/gauthamram57/" target="_blank" rel="noopener noreferrer">
           <span class="contact-link-label">LinkedIn</span>
           <span>linkedin.com/in/gauthamram57</span>
           <span class="contact-link-arrow">↗</span>
         </a>
-        <a class="contact-link" href="https://github.com/gauthamram57" target="_blank">
+        <a class="contact-link" href="https://github.com/gauthamram57" target="_blank" rel="noopener noreferrer">
           <span class="contact-link-label">GitHub</span>
           <span>github.com/gauthamram57</span>
           <span class="contact-link-arrow">↗</span>
         </a>
-        <a class="contact-link" href="https://ctftime.org/user/248129" target="_blank">
+        <a class="contact-link" href="https://ctftime.org/user/248129" target="_blank" rel="noopener noreferrer">
           <span class="contact-link-label">CTFtime</span>
           <span>GT57 · Team Hunter</span>
           <span class="contact-link-arrow">↗</span>
         </a>
-        <a class="contact-link" href="https://ctftime.org/team/375677" target="_blank">
+        <a class="contact-link" href="https://ctftime.org/team/375677" target="_blank" rel="noopener noreferrer">
           <span class="contact-link-label">Team</span>
           <span>Team Hunter · Amrita</span>
           <span class="contact-link-arrow">↗</span>
@@ -983,28 +1443,28 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
       <p style="font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;">Current focus</p>
       <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
         <div style="background:rgba(255,255,255,0.04);padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.2rem;flex-shrink:0;">🔐</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.8rem;flex-shrink:0;color:#ea8050;">AS</span>
           <div>
             <div style="font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:2px;">AppSec Research</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6;">Active bug bounty on Intigriti — IDOR, BAC, API security across cloud-hosted platforms.</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.04);padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.2rem;flex-shrink:0;">☁️</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.8rem;flex-shrink:0;color:#ea8050;">CS</span>
           <div>
             <div style="font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:2px;">Cloud Security</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6;">Learning AWS/GCP attack paths, IAM misconfiguration, and cloud-native exploitation.</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.04);padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.2rem;flex-shrink:0;">🤖</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.8rem;flex-shrink:0;color:#ea8050;">AI</span>
           <div>
             <div style="font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:2px;">AI Security</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6;">Researching LLM threat models, prompt injection, and OWASP LLM Top 10 attack classes.</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.04);padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.2rem;flex-shrink:0;">🏁</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.8rem;flex-shrink:0;color:#ea8050;">CTF</span>
           <div>
             <div style="font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:2px;">CTF Competitions</div>
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6;">Team Hunter — ranked #76 globally. Specialising in web, forensics, and reversing.</div>
@@ -1018,7 +1478,7 @@ footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
 
 <footer>
   <span>© 2026 Gautham Ram · Coimbatore, India</span>
-  <span><a href="https://ctftime.org/team/375677" target="_blank">Team Hunter</a> · <a href="https://github.com/gauthamram57" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/gauthamram57/" target="_blank">LinkedIn</a></span>
+  <span><a href="https://ctftime.org/team/375677" target="_blank" rel="noopener noreferrer">Team Hunter</a> · <a href="https://github.com/gauthamram57" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/gauthamram57/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
 </footer>
 
 <script>
